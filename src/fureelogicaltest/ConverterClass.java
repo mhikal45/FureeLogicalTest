@@ -89,10 +89,18 @@ public class ConverterClass {
                     .append("ratus ")
                     .append(dozens(a%100000));
             } else if ((a%100000) >= 1000) {
-                hundreds
+                if ((a%100000) == 1000) {
+                    hundreds
+                    .append(numberToNumberName(a/100000))
+                    .append("ratus ")
+                    .append("satu ribu ");
+                }
+                else {
+                    hundreds
                     .append(numberToNumberName(a/100000))
                     .append("ratus ")
                     .append(thousand(a%100000));
+                }
             } 
             else hundreds
                     .append(numberToNumberName(a/100000))
